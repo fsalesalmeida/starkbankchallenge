@@ -1,0 +1,5 @@
+starkbank
+flake8
+apscheduler
+names
+python-dotenv
