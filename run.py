@@ -1,13 +1,9 @@
-from dotenv import load_dotenv
-import os
-from src.utils.generate_keys import generate_keys
-from src.utils import credentials
+import logging
 from src.helpers import scheduler
+from src.utils import environment
 
-load_dotenv()
+logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
-if not os.path.isfile(os.environ.get('PRIVATE_KEY')):
-    generate_keys()
-credentials.get_project_credentials()
-credentials.set_default_user()
+environment.set_env()
+logging.info("Running Invoice Task...")
 scheduler.run_task()

@@ -11,7 +11,7 @@ def get_cert():
 def get_project_credentials():
     project = starkbank.Project(
         environment="sandbox",
-        id="6356602303021056",
+        id=os.environ.get('PROJECT_ID'),
         private_key=get_cert()
     )
     return project

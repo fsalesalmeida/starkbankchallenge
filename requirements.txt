@@ -3,3 +3,4 @@ flake8
 apscheduler
 names
 python-dotenv
+flask
