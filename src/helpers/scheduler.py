@@ -6,9 +6,9 @@ import random
 
 def run_task():
     sched = BlockingScheduler()
-    stop_time = datetime.datetime.now() + datetime.timedelta(minutes=1)
+    stop_time = datetime.datetime.now() + datetime.timedelta(hours=24)
 
-    @sched.scheduled_job('interval', minutes=1)
+    @sched.scheduled_job('interval', hours=3)
     def timed_job():
         if datetime.datetime.now() > stop_time:
             sched.remove_all_jobs()
